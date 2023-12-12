@@ -9,7 +9,7 @@ import * as Yup from 'yup';
 import { Formik } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectContacts } from 'redux/selectors';
-import { addContact } from 'redux/operations';
+import { addContact } from 'redux/Auth/operations';
 const PhonebookSchema = Yup.object().shape({
   name: Yup.string()
     .min(2, 'Too Short!')
