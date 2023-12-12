@@ -1,13 +1,16 @@
-
-
-import { FilterSection, Input, StyledTitle, StyledSection } from './Filter.styled.js';
+import {
+  FilterSection,
+  Input,
+  StyledTitle,
+  StyledSection,
+} from './Filter.styled.js';
 import { useDispatch, useSelector } from 'react-redux';
-import { setFilter } from 'redux/filterReducer.js'; 
-import { selectFilter } from 'redux/selectors.js';
+import { setFilter } from 'redux/contacts/filterReducer.js';
+import { selectFilter } from 'redux/contacts/selectors.js';
 
 export const Filter = () => {
   const dispatch = useDispatch();
-  const filter = useSelector(selectFilter); 
+  const filter = useSelector(selectFilter);
 
   const handleSearchNumber = value => {
     dispatch(setFilter(value));

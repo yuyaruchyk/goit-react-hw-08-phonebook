@@ -8,7 +8,7 @@ import {
 import * as Yup from 'yup';
 import { Formik } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectContacts } from 'redux/selectors';
+import { selectContacts } from 'redux/contacts/selectors';
 import { addContact } from 'redux/Auth/operations';
 const PhonebookSchema = Yup.object().shape({
   name: Yup.string()
