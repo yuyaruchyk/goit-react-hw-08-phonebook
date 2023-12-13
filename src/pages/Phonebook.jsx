@@ -20,3 +20,4 @@ export function Phonebook() {
     </div>
   );
 }
+export default Phonebook;
