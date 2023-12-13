@@ -6,7 +6,6 @@ import { Filter } from '../components/Filter/Filter';
 export function Phonebook() {
   return (
     <div>
-      <h1>Phonebook</h1>
       <Container>
         <h2>Add new contact</h2>
         <ContactForm />
