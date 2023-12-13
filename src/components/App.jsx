@@ -1,16 +1,26 @@
-import { ContactForm } from './ContactForm/ContactForm';
-import { Filter } from './Filter/Filter';
-import { ContactList } from './ContactList/ContactList';
-import { Container } from './App.styled';
+import { Route, Routes } from 'react-router-dom';
+import { lazy } from 'react';
+import Layout from './Layout/Layout';
+
+const Home = lazy(() => import('pages/Home'));
+const NotFoundPage = lazy(() => import('pages/NotFoundPage'));
+const LogIn = lazy(() => import('pages/Login'));
+const Register = lazy(() => import('pages/Register'));
+const Contacts = lazy(() => import('pages/Contacts'));
 
 export const App = () => {
   return (
-    <Container>
-      <h1>Phonebook</h1>
-      <ContactForm />
-      <h2>Contacts</h2>
-      <Filter />
-      <ContactList />
-    </Container>
+    <main>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="/logIn" element={<LogIn />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/contacts" element={<Contacts />} />{' '}
+        </Route>
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </main>
   );
 };
+export default App;

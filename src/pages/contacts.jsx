@@ -1,7 +1,7 @@
 import { Container } from 'components/App.styled';
-import { ContactForm } from 'components/ContactForm';
-import { ContactList } from 'components/ContactList';
-import { Filter } from 'components/Filter';
+import { ContactForm } from '../components/ContactForm/ContactForm';
+import { ContactList } from '../components/ContactList/ContactList';
+import { Filter } from '../components/Filter/Filter';
 
 export function Phonebook() {
   return (
