@@ -4,7 +4,7 @@ import { Field, Form, ErrorMessage } from 'formik';
 export const MainForm = styled(Form)`
   display: flex;
   flex-direction: column;
-  max-width: 300px;
+  width: 300px;
   margin: 0 auto;
   gap: 24px;
 `;
@@ -47,6 +47,3 @@ export const Error = styled(ErrorMessage)`
   color: red;
   font-size: 16px;
 `;
-
-
-
