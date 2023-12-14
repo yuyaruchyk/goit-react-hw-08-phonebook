@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 export const Btn = styled.button`
   margin-bottom: 20px;
@@ -27,4 +28,23 @@ export const UserName = styled.p`
   text-align: center;
   letter-spacing: 0.02em;
   text-transform: capitalize;
+`;
+
+export const StyledNavLink = styled(NavLink)`
+  text-decoration: none;
+  display: block;
+  font-weight: 500;
+  font-size: 20px;
+  padding: 10px;
+  color: black;
+
+  &:hover,
+  &:focus {
+    color: #404bbf;
+  }
+`;
+
+export const StyledDiv = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
