@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { register } from 'redux/auth/operations';
+import { register } from 'redux/auth/authOperations';
 import { MainForm, StyledLabel, StyledField, Btn } from './RegisterForm.styled';
 
 export const RegisterForm = () => {

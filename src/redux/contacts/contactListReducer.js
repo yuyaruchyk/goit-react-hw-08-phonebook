@@ -3,8 +3,8 @@ import {
   addContact,
   deleteContact,
   fetchContacts,
-} from 'redux/contacts/operations';
-import { logOut } from 'redux/auth/operations';
+} from 'redux/contacts/contactsOperations';
+import { logOut } from 'redux/auth/authOperations';
 
 const handlePending = state => {
   state.isLoading = true;

@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { logOut } from 'redux/auth/operations';
+import { logOut } from 'redux/auth/authOperations';
 import { useAuth } from 'hooks';
 
 import { Btn, StyledDiv, UserName } from './UserMenu.styled';
