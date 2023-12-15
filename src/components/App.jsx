@@ -1,18 +1,16 @@
 import { Route, Routes } from 'react-router-dom';
 import Layout from './Layout/Layout';
-import { useEffect, lazy } from 'react';
+import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { PrivateRoute } from './PrivateRoute';
 import { RestrictedRoute } from './RestrictedRoute';
 import { refreshUser } from 'redux/auth/authOperations';
 import { useAuth } from 'hooks';
-
-const HomePage = lazy(() => import('pages/HomePage'));
-
-const LoginPage = lazy(() => import('pages/LoginPage'));
-const RegisterPage = lazy(() => import('pages/RegisterPage'));
-const PhonebookPage = lazy(() => import('pages/PhonebookPage'));
+import Home from 'pages/HomePage';
+import Login from 'pages/LoginPage';
+import Phonebook from 'pages/PhonebookPage';
+import Register from 'pages/RegisterPage';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -27,32 +25,23 @@ export const App = () => {
   ) : (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route index element={<HomePage />} />
+        <Route index element={<Home />} />
         <Route
           path="/register"
           element={
-            <RestrictedRoute
-              redirectTo="/phonebook"
-              component={<RegisterPage />}
-            />
+            <RestrictedRoute redirectTo="/phonebook" component={<Register />} />
           }
         />
         <Route
           path="/login"
           element={
-            <RestrictedRoute
-              redirectTo="/phonebook"
-              component={<LoginPage />}
-            />
+            <RestrictedRoute redirectTo="/phonebook" component={<Login />} />
           }
         />
         <Route
           path="/phonebook"
           element={
-            <PrivateRoute
-              redirectTo="/phonebook"
-              component={<PhonebookPage />}
-            />
+            <PrivateRoute redirectTo="/phonebook" component={<Phonebook />} />
           }
         />
       </Route>

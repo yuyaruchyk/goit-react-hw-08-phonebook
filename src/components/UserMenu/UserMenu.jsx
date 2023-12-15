@@ -1,4 +1,3 @@
-import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { logOut } from 'redux/auth/authOperations';
 import { useAuth } from 'hooks';
@@ -9,11 +8,9 @@ import { StyledNavLink } from './UserMenu.styled';
 export const UserMenu = () => {
   const dispatch = useDispatch();
   const { user } = useAuth();
-  const navigate = useNavigate();
 
   const handleLogout = () => {
     dispatch(logOut());
-    navigate('/');
   };
 
   return (
